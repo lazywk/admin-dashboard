@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { router } from './configs/routes.config'
+import { Provider } from 'react-redux'
+import store from './store'
 
-export const isLoginning = !true
+export const isLoginning = true
 
 const browserRouter = createBrowserRouter(router)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <>
-    <RouterProvider router={browserRouter}/>
-  </>,
+  <Provider store={store}>
+    <RouterProvider router={browserRouter} />
+  </Provider>,
 )
