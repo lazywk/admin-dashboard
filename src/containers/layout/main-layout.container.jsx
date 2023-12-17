@@ -1,6 +1,7 @@
 import React from 'react';
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Layout, Menu, theme } from 'antd';
+import { Link } from 'react-router-dom';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -8,7 +9,7 @@ const items = [UserOutlined, VideoCameraOutlined, UploadOutlined, UserOutlined].
     (icon, index) => ({
         key: String(index + 1),
         icon: React.createElement(icon),
-        label: `nav ${index + 1}`,
+        label: <Link to={index === 0 ? '/' : `/path-${index + 1}`}>nav {index + 1}</Link>,
     }),
 );
 export default function MainLayoutContainer({ children }) {
@@ -31,7 +32,7 @@ export default function MainLayoutContainer({ children }) {
                     }}
                 >
                     <div className="demo-logo-vertical" />
-                    <Menu theme="light" mode="inline" defaultSelectedKeys={['4']} items={items} />
+                    <Menu theme="light" mode="inline" defaultSelectedKeys={['1']} items={items} />
                 </Sider>
                 <Layout>
                     {/* <Header style={{ padding: 0, background: colorBgContainer }} /> */}

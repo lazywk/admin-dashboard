@@ -2,7 +2,8 @@ import React from 'react';
 import { Button, Checkbox, Form, Input } from 'antd';
 
 
-const LoginFromComponent = ({ onSubmit }) => {
+const LoginFromComponent = ({ onSubmit, loading }) => {
+
     const onFinish = (values) => {
         console.log('Success:', values);
         onSubmit?.(values)
@@ -60,7 +61,7 @@ const LoginFromComponent = ({ onSubmit }) => {
                 span: 16,                                               
             }}
         >
-            <Button type="primary" htmlType="submit">
+            <Button type="primary" htmlType="submit" loading={loading}>
                 Submit
             </Button>
         </Form.Item>

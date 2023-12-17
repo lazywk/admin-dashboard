@@ -2,13 +2,16 @@
 import React from 'react'
 import { Navigate } from 'react-router-dom'
 import { urls } from '../../configs/urls.config'
-import { isLoginning } from '../../main'
+import MainLayoutContainer from '../../containers/layout/main-layout.container'
+import { useSelector } from 'react-redux'
 
 export default function PrivateRouter({ children }) {
-    if (!isLoginning) {
+    const { signedIn } = useSelector(state => state.auth)
+
+    if (!signedIn) {
         return <Navigate to={urls.LOGIN} replace />
     }
     return (
-        <>{children}</>
+        <MainLayoutContainer>{children}</MainLayoutContainer>
     )
 }

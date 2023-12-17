@@ -12,6 +12,8 @@ const privateRoutes = [
     }
 ].map(route => ({ path: route.path, element: <PrivateRouter>{route.element}</PrivateRouter> }))
 
+const testRoutes = [1, 2, 3, 4].map((route) => ({ path: route === 1 ? '/' : `/path-${route}`, element: <PrivateRouter><h1>path-{route}</h1></PrivateRouter> }))
+
 const publicRoutes = [
     {
         path: urls.LOGIN,
@@ -26,7 +28,8 @@ const publicRoutes = [
 export const router = [
     ...privateRoutes,
     ...publicRoutes,
-    ... [{
+    ...testRoutes,
+    ...[{
         path: '*',
         element: <p>404 | NOT Found</p>
     }]

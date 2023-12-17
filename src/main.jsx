@@ -6,7 +6,6 @@ import { router } from './configs/routes.config'
 import { Provider } from 'react-redux'
 import store from './store'
 
-export const isLoginning = true
 
 const browserRouter = createBrowserRouter(router)
 

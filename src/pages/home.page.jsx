@@ -1,11 +1,14 @@
+import { Button } from 'antd'
 import React from 'react'
-import MainLayoutContainer from '../containers/layout/main-layout.container'
+import { useDispatch } from 'react-redux'
+import { logoutSuccess } from '../store/auth/authSlice'
 
 function HomePage() {
+    const dispatch = useDispatch()
     return (
-        <MainLayoutContainer>
-            <div className='home-page'>HomePage</div>
-        </MainLayoutContainer>
+        <div className='home-page'>
+            <Button onClick={() => dispatch(logoutSuccess())}>Log Out</Button>
+        </div>
     )
 }
 
