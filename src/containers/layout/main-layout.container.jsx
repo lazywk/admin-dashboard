@@ -21,7 +21,7 @@ export default function MainLayoutContainer({ children }) {
         <div className="main-layout-container">
             <Layout>
                 <Sider
-                    theme='light'
+                    theme='dark'
                     breakpoint="lg"
                     collapsedWidth="0"
                     onBreakpoint={(broken) => {
@@ -32,7 +32,7 @@ export default function MainLayoutContainer({ children }) {
                     }}
                 >
                     <div className="demo-logo-vertical" />
-                    <Menu theme="light" mode="inline" defaultSelectedKeys={['1']} items={items} />
+                    <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']} items={items} />
                 </Sider>
                 <Layout>
                     {/* <Header style={{ padding: 0, background: colorBgContainer }} /> */}
